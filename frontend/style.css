@@ -1,0 +1,235 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: azure;
+    margin: 0;
+}
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20 px;
+}
+header{
+    background-color: gray;
+    color: white;
+    padding: 15px 0;
+}
+.header-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.logo{
+    font-size: 24px;
+    font-weight: bold;
+}
+header nav a{
+    color: white;
+    text-decoration:  none;  /*- убрать подчеркивание элемента */
+    margin-left:  20px;
+}
+header nav a:hover{
+    color: rgb(28, 9, 9);
+}
+.items-grid{
+    display: flex;
+    flex-wrap: wrap;
+    gap:20px;
+    justify-content: flex-start;
+    margin-top: 30px;
+}
+.card.dummy{
+    width: 250px;
+    height: 300px;
+    background-color: bisque;
+    border: 2px dashed #bbb;
+    border-radius: 10px;
+}
+.card{
+    width: 250px;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 2px 5px;
+}
+.card-badge{
+    position: absolute;
+    top:5px;
+    right:5px;
+    background-color:black;
+    color:white;
+    padding: 2px 5px;
+    font-size: 12px;
+}
+.card-stats{
+    display:  flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    border-top: 10px solid gray;
+    padding-top:5px;
+}
+.btn-more{
+    width: 100%;
+    margin-top:10px;
+    background-color: #bbb;
+    color:white;
+    border:none;
+    cursor: pointer;
+}
+.card-extra{
+    font-weight: bold;
+}
+:root{
+    --bg-color: black;
+    --text-color: #000000;
+    --card-bg: #ffffff;
+}
+body.dark-theme{
+    --bg-color: #d5c6c6;
+    --text-color: #ecf0f1;
+    --card-bg: #2d2d2d;
+}
+body{
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: 0.3s;
+}
+.form_container{
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+}
+.form-container form{
+    display: flex;
+    flex-direction: column;
+    gap:15px;
+
+}
+.form-row{
+    display: flex;
+    gap:10px;
+}
+.form-row input{
+    flex:1;
+}
+.preview-section{
+    margin-top:20px;
+    text-align:center;
+    border-top:1px solid #eee;
+    padding-top:15px;
+}
+#preview-img{
+    max-width: 200px;
+    border-radius: 2px;
+    border:2px dashed #ccc;
+}
+
+
+.item-details-card {
+    display: flex;
+    gap: 30px;
+    background: #ffffff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 30px;
+    border: 1px solid #eef2f5;
+}
+
+/* Блок с изображением */
+.image-wrapper {
+    flex: 1;
+    max-width: 400px;
+}
+
+.image-wrapper img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 8px;
+    border: 1px solid #eef2f5;
+}
+
+/* Блок с текстовой информацией */
+.info-wrapper {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.info-wrapper h1 {
+    color: #2c3e50;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-bottom: 2px solid #f4f6f8;
+    padding-bottom: 10px;
+}
+
+.info-wrapper p {
+    font-size: 1.1rem;
+    color: #4a5568;
+    margin: 8px 0;
+}
+
+.info-wrapper strong {
+    color: #1a202c;
+}
+
+/* Оформление бейджей и статусов */
+#danger-badge {
+    display: none;
+    margin-top: 15px;
+    background-color: black;
+    color: #ffffff;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    width: fit-content;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Кнопка удаления / списания */
+#delete-btn {
+    background-color: black;
+    color: #ffffff;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.1s ease;
+    margin-top: 20px;
+}
+
+#delete-btn:hover {
+    background-color: black;
+    transform: translateY(-2px);
+}
+
+#delete-btn:active {
+    transform: translateY(0);
+}
+
+/* Адаптивность для мобильных экранов */
+@media (max-width: 768px) {
+    .item-details-card {
+        flex-direction: column;
+    }
+
+    .image-wrapper {
+        max-width: 100%;
+    }
+
+    .image-wrapper img {
+        height: 250px;
+    }
+}

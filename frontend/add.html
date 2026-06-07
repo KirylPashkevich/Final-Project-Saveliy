@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+      <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="header-content container">
+            <div class="logo">Добавление предмета</div>
+            <button id="theme-toggle" class="btn-theme">🌙Темная тема</button>
+            <nav>
+                <a href="index.html">Каталог</a>
+                <a href="add.html">Добавить предмет</a>
+            </nav>
+        </div>
+    </header>
+    <main class="container">
+        <div class="form_container">
+            <h2> Регистрация нового хлама</h2>
+            <form id="add-item-form">
+                <input type="text" id="name" placeholder="название  предмета">
+                <input type="text" id="image_name" placeholder="имя файла картинки">
+                <div class="input-group">
+                    <label>Фотография товара</label>
+                    <input type="file" id="image_file" accept="image/*" required>
+                </div>
+                <div class="forn-row">
+                    <input type="number" id="sector" placeholder="Сектор" required>
+                    <input type="number" id="quantity" placeholder="Количество" required>
+                </div>
+                <input type="number" step="0.1" id="weight" placeholder="вес(кг)">
+                <label class="checkbox-label">
+                    <input type="checkbox" id="is_dangerous"> Опасный груз
+                </label>
+                <button type="submit" id="save-btn">Сохранить</button>
+            </form>
+            <div class="preview-section">
+                <p>Предпросмотр фото:</p>
+                <img id="previev-img" src="" alt="Превью"></img>
+            </div>
+        </div>
+    </main>
+    <script src="add-script.js"></script>
+</body>
+</html>

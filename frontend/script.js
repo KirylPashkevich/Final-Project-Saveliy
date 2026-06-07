@@ -31,7 +31,7 @@ function renderCards(items){
                 <span> Кол-во <b>${item.quantity}</b> </span>
                 <span class="card-extra"> ${item.is_dangerous ? 'Опасно!' : 'Безопасно'} </span>
             </div>
-            <button class="btn-more" onclick="window.location.href='item.html?id=${item.id}'">Подробнее </button>
+            <button class="btn-more" onclick="window.location.href='/item.html?id=${item.id}'">Подробнее </button>
             <button class="btn-more" onclick="addToCart(${item.id})"> в корзину </button>
             `;  
         container.appendChild(card)

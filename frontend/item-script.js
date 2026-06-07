@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", async ()=> {
     const itemId = urlParams.get('id')
     if(!itemId){
         alert("Товар не найдет или не выбран!!!!")
-        window.location.href = "index.html"
+        window.location.href = "/"
         return
     }
     const API_URL = `/items/${itemId}`;

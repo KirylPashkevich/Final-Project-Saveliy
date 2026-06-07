@@ -28,7 +28,7 @@ form.addEventListener('submit', async (event) =>{
     });
     if (response.status ===201){
         alert("Все топчик")
-        window.location.href = "index.html"
+        window.location.href = "/"
     }else{
         alert("ох я сплоховал")
         console.log(await response.json)

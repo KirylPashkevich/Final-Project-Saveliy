@@ -363,11 +363,31 @@ def get_sector_stats():
 
 FRONTEND_DIR = BASE_DIR.parent / "frontend"
 
-
 @app.get("/", include_in_schema=False)
-def serve_frontend():
+def serve_index():
     return FileResponse(str(FRONTEND_DIR / "index.html"))
 
-@app.get("/{page_name}.html", include_in_schema=False)
-def serve_frontend_page(page_name: str):
-    return FileResponse(str(FRONTEND_DIR / f"{page_name}.html"))
+@app.get("/index.html", include_in_schema=False)
+def serve_index_alias():
+    return FileResponse(str(FRONTEND_DIR / "index.html"))
+
+@app.get("/add.html", include_in_schema=False)
+def serve_add():
+    return FileResponse(str(FRONTEND_DIR / "add.html"))
+
+@app.get("/cart.html", include_in_schema=False)
+def serve_cart():
+    return FileResponse(str(FRONTEND_DIR / "cart.html"))
+
+@app.get("/item.html", include_in_schema=False)
+def serve_item():
+    return FileResponse(str(FRONTEND_DIR / "item.html"))
+
+@app.get("/{file_path:path}", include_in_schema=False)
+def serve_static(file_path: str):
+    if file_path.startswith("static/") or file_path.startswith("items") or file_path.startswith("cart") or file_path.startswith("analytics"):
+        raise HTTPException(status_code=404)
+    file = FRONTEND_DIR / file_path
+    if file.is_file():
+        return FileResponse(str(file))
+    raise HTTPException(status_code=404)
